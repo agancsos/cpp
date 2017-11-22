@@ -48,7 +48,7 @@ bool AMGData::CreateBaseballDB(){
 bool AMGData::CreateStockDB(){
     try{
         string longSQL = "create table if not exists stock_stats(company_name text,ticker text";
-        longSQL += "primary key,country text,price real default '0.00',exchange_rate real default";
+        longSQL += "primary key,country text,price real default '0.00',exchange_rate real default '0.00',";
         longSQL += "shares_outstanding real default '0.00',net_income real default";
         longSQL += "'0.00',market_value real default '0.00',pe_ratio real default '0.00')";
 
@@ -83,9 +83,9 @@ bool AMGData::InsertStock(StockStatRecord a){
 	try{
 		AMGSQLite dbSession = AMGSQLite(basePath + "/db/stocks.db");
 		string longQuery = "insert into stock_stats (company_name,ticker, country, price, exchange_rate";
-		longQuery += ",net_income, market_value, pe_ratio) values ('";
+		longQuery += ",net_income, market_value, pe_ratio,shares_outstanding) values ('";
 		longQuery += (a.companyName + "','" + a.name + "','" + a.exchangeCountry + "','" + to_string(a.price) + "','" + to_string(a.exchangeRate) + "','");
-		longQuery += (to_string(a.netIncome) + "','" + to_string(a.marketValueUsd) + "','" + to_string(a.peRatio) + "')");
+		longQuery += (to_string(a.netIncome) + "','" + to_string(a.marketValueUsd) + "','" + to_string(a.peRatio) + "' + to_string(a.sharesOutstanding))");
 		dbSession.RunQuery(longQuery);
 	}
 	catch(exception &e){
