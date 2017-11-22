@@ -85,7 +85,7 @@ bool AMGData::InsertStock(StockStatRecord a){
 		string longQuery = "insert into stock_stats (company_name,ticker, country, price, exchange_rate";
 		longQuery += ",net_income, market_value, pe_ratio,shares_outstanding) values ('";
 		longQuery += (a.companyName + "','" + a.name + "','" + a.exchangeCountry + "','" + to_string(a.price) + "','" + to_string(a.exchangeRate) + "','");
-		longQuery += (to_string(a.netIncome) + "','" + to_string(a.marketValueUsd) + "','" + to_string(a.peRatio) + "' + to_string(a.sharesOutstanding))");
+		longQuery += (to_string(a.netIncome) + "','" + to_string(a.marketValueUsd) + "','" + to_string(a.peRatio) + "'," + to_string(a.sharesOutstanding) + "')");
 		dbSession.RunQuery(longQuery);
 	}
 	catch(exception &e){
