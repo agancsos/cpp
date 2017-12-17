@@ -2,36 +2,36 @@
 using namespace std;
 
 METPerson::METPerson(){
-	first_name = "";
-    last_name = "";
-    middle_name = "";
+	firstName = "";
+    lastName = "";
+    middleName = "";
     age = 21;
     sex = OTHER;
-    social_security_number = "000-00-0000";
+    socialSecurityNumber = "000-00-0000";
 }
 
 METPerson::~METPerson(){
 }
 
 METPerson::METPerson(string f, string l, string m, int a, GENDER g, string s){
-	first_name = f;
-	last_name = l;
-	middle_name = m;
+	firstName = f;
+	lastName = l;
+	middleName = m;
 	age = a;
 	sex = g;
-	social_security_number = s;
+	socialSecurityNumber = s;
 }
 
 void METPerson::setFirstName(string a){
-	first_name = a;
+	firstName = a;
 }
 
 void METPerson::setLastName(string a){
-	last_name = a;
+	lastName = a;
 }
 
 void METPerson::setMiddleName(string a){
-	middle_name = a;
+	middleName = a;
 }
 
 void METPerson::setAge(int a){
@@ -43,19 +43,19 @@ void METPerson::setSex(GENDER a){
 }
 
 void METPerson::setSocial(string a){
-	social_security_number = a;
+	socialSecurityNumber = a;
 }
 
 string METPerson::getFirstName(){
-	return first_name;
+	return firstName;
 }
 
 string METPerson::getLastName(){
-	return last_name;
+	return lastName;
 }
 
 string METPerson::getMiddleName(){
-	return middle_name;
+	return middleName;
 }
 
 int METPerson::getAge(){
@@ -67,6 +67,6 @@ GENDER METPerson::getSex(){
 }
 
 string METPerson::getSocial(){
-	return social_security_number;
+	return socialSecurityNumber;
 }
 
