@@ -42,4 +42,4 @@ Can be installed from https://cmake.org/download/
 #### Linux
 Can be installed from https://cmake.org/download/
 ## Build
-This can be built either using one of the run scripts or manually using the following instructions
+This can be built either using one of the compile scripts or manually using the following instructions
